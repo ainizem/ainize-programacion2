@@ -42,6 +42,32 @@ public class AltaEstudiante extends JFrame {
 	private final ButtonGroup btnGroupGenero = new ButtonGroup();
 
 	public AltaEstudiante(ArrayList<Estudiante> estudiantes) {
+
+		    Estudiante estudiante1 = new Estudiante();
+    estudiante1.setDni("12345678A");
+    estudiante1.setNombre("María");
+    estudiante1.setApellidos("Gómez López");
+    estudiante1.setEmail("maria.gomez@example.com");
+    estudiante1.setCurso("DAW");
+    estudiante1.setNecesidadesEspeciales("Ninguna");
+    estudiante1.setTerminosAceptados(true);
+    estudiante1.setFechaNacimiento(LocalDate.of(2000, 1, 15));
+    estudiante1.setGenero(0); // Femenino
+
+    Estudiante estudiante2 = new Estudiante();
+    estudiante2.setDni("87654321B");
+    estudiante2.setNombre("Juan");
+    estudiante2.setApellidos("Pérez Martín");
+    estudiante2.setEmail("juan.perez@example.com");
+    estudiante2.setCurso("Integracion Social");
+    estudiante2.setNecesidadesEspeciales("Dificultades auditivas");
+    estudiante2.setTerminosAceptados(true);
+    estudiante2.setFechaNacimiento(LocalDate.of(1998, 6, 25));
+    estudiante2.setGenero(1); // Masculino
+
+    estudiantes.add(estudiante1);
+    estudiantes.add(estudiante2);
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 521);
 		contentPane = new JPanel();
