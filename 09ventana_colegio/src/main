@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+import model.Estudiante;
+import ui.AltaEstudiante;
+import ui.ListadoEstudiante;
+
+public class Main {
+    public static void main(String[] args) {
+        // Crear la lista compartida de estudiantes
+        ArrayList<Estudiante> estudiantes = new ArrayList<>();
+
+        // Abrir la ventana de alta de estudiantes
+        AltaEstudiante altaEstudiante = new AltaEstudiante(estudiantes);
+        altaEstudiante.setVisible(true);
+
+        // Cuando termine, podemos abrir la ventana de listado
+        // Por ejemplo, en un botón de "Ver listado" dentro de AltaEstudiante:
+        altaEstudiante.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Abrir la ventana del listado al cerrar AltaEstudiante
+                ListadoEstudiante listadoEstudiante = new ListadoEstudiante(estudiantes);
+                listadoEstudiante.setVisible(true);
+            }
+        });
